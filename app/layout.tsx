@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import { Anton } from "next/font/google";
+import "./globals.css";
+import { Provider } from "./utils/providers/Provider";
+
+import { WalletComp } from "./components/wallet/walletComp";
+
+import { FileViewer } from "./components/FileViewer";
+
+
+// const anton = Anton({
+//   variable: "--font-anton",
+//   subsets: ["latin"],
+//   weight: ["400"],
+// });
+
+export const metadata: Metadata = {
+  title: "Credflow",
+  description: "Monetize your digital content with AI-powered creation and blockchain payments",
+};
+
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={` antialiased text-black `}
+      >
+        <Provider>
+          <WalletComp/>
+          {children}
+          <FileViewer />
+        </Provider>
+      </body>
+    </html>
+  );
+}
