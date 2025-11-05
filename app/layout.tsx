@@ -15,7 +15,7 @@ import { FileViewer } from "./components/FileViewer";
 // });
 
 export const metadata: Metadata = {
-  title: "Credflow",
+  title: "CredFlow",
   description: "Monetize your digital content with AI-powered creation and blockchain payments",
 };
 
