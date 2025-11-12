@@ -1,6 +1,14 @@
-# 🚀 Credflow
+# 💶Credflow
 
 **Monetize your digital content with AI-powered creation and blockchain payments.**
+<div align="center">
+  
+![Landing Page](public/screenshots/banner.png)
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://credflow-self.vercel.app)
+[![Demo Video](https://img.shields.io/badge/Watch%20Demo-Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/)
+
+</div>
 
 Credflow is a comprehensive digital marketplace and cloud storage platform that enables creators to monetize their content through crypto micropayments (x402 protocol), powered by AI content generation and blockchain technology.
 
@@ -9,6 +17,7 @@ Credflow is a comprehensive digital marketplace and cloud storage platform that 
 ## 📋 Table of Contents
 
 - [What is Credflow?](#what-is-credflow)
+- [Screenshots](#-screenshots)
 - [Key Features](#-key-features)
 - [How It Works](#-how-it-works)
 - [Tech Stack](#️-tech-stack)
@@ -40,6 +49,34 @@ When ChatGPT generates content inspired by Miyazaki's art style, the legendary c
 - AI systems train on their content
 - AI agents generate content inspired by their work
 - Other users purchase their digital files
+
+---
+
+## 📸 Screenshots
+
+### Homepage - Landing Experience
+
+![Credflow Homepage](public/screenshots/Home.png)
+
+The landing page introduces Credflow with a bold, modern design featuring the electric blue and black theme. Users can learn about the platform's features and get started with signup.
+
+### Dashboard - Your Command Center
+
+![Credflow Dashboard](public/screenshots/Dashboard.png)
+
+The main dashboard provides a comprehensive overview of your files, storage, and activities. Navigate your file explorer, access AI features, and manage your content all from one central location.
+
+### Affiliate System - Monetize Your Network
+
+![Affiliate Management](public/screenshots/Affiliates.png)
+
+Manage your affiliate programs with ease. Set commission rates, track referrals, and monitor earnings. The affiliate system enables you to grow your revenue through your network.
+
+### Platform in Action
+
+![Credflow Working](public/screenshots/Working.png)
+
+See Credflow in action with real-time file management, AI-powered content generation, and seamless blockchain payments. The platform combines powerful features with an intuitive interface.
 
 ---
 
