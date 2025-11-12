@@ -268,9 +268,9 @@ const Test = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Aanya R.", role: "3D Artist", quote: "Finally sold my Blender models without touching a marketplace. Just dropped the link." },
-              { name: "Sarah M.", role: "AI Prompt Engineer", quote: "Made $8K sharing my prompt packs — no ads, no funnels, just file drops." },
-              { name: "Nina D.", role: "Design Curator", quote: "I don&apos;t even make stuff — I collect and resell! Earning off discovery is wild." }
+              { name: "Sudhansu S.", role: "3D Artist", quote: "Finally sold my Blender models without touching a marketplace. Just dropped the link." },
+              { name: "Shray D.", role: "AI Prompt Engineer", quote: "Made $8K sharing my prompt packs — no ads, no funnels, just file drops." },
+              { name: "Tanishque P.", role: "Design Curator", quote: "I don&apos;t even make stuff — I collect and resell! Earning off discovery is wild." }
             ].map((testimonial, index) => (
               <div key={index} className="bg-white border-2 border-black p-6 brutal-shadow-left hover:translate-x-1 hover:translate-y-1 hover:brutal-shadow-center transition-all">
                 <div className="flex items-center gap-4 mb-4">
