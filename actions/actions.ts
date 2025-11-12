@@ -69,7 +69,22 @@ export async function purchaseFromMarketplace(wallet: `0x${string}`, id: string,
 
     if(affiliateCode && res.data?.transactionData?.affiliateCommission) {
       try {
-        const account2 = await cdp.evm.getAccount({ address: "0x4FA2D62E28f46b3321366a6D5497acEd5a7E12FD" });
+        // Try to get admin wallet account, fallback to buyer's account if it doesn't exist
+        const adminWalletAddress = "0x4FA2D62E28f46b3321366a6D5497acEd5a7E12FD";
+        let account2;
+        let actualPayerAddress = adminWalletAddress;
+        
+        try {
+          account2 = await cdp.evm.getAccount({ address: adminWalletAddress as `0x${string}` });
+          console.log("Using admin wallet for affiliate payments");
+        } catch (accountError: any) {
+          // If admin account doesn't exist, fallback to buyer's account
+          console.warn("Admin wallet account not found, falling back to buyer's account:", accountError.message);
+          account2 = account; // Use the buyer's account we already validated
+          actualPayerAddress = wallet; // Use buyer's wallet address
+          console.log("Using buyer's account as fallback for affiliate payments");
+        }
+        
         console.log("Affiliate", affiliate);
         
         const { commissionTransaction, sellerTransaction } = res.data.transactionData.affiliateCommission;
@@ -147,8 +162,8 @@ export async function purchaseFromMarketplace(wallet: `0x${string}`, id: string,
               ...commissionTransaction.metadata,
               blockchainTransaction: affiliateTxHash,
               network: "base-sepolia",
-              payer: "0x4FA2D62E28f46b3321366a6D5497acEd5a7E12FD", // Admin wallet that sends the funds
-              paymentFlow: 'admin',
+              payer: actualPayerAddress, // Admin wallet or buyer's wallet (fallback)
+              paymentFlow: actualPayerAddress === wallet ? 'buyer' : 'admin',
               success: true,
               transferResponse: txn1
             }
@@ -161,8 +176,8 @@ export async function purchaseFromMarketplace(wallet: `0x${string}`, id: string,
               ...sellerTransaction.metadata,
               blockchainTransaction: sellerTxHash,
               network: "base-sepolia", 
-              payer: "0x4FA2D62E28f46b3321366a6D5497acEd5a7E12FD", // Admin wallet that sends the funds
-              paymentFlow: 'admin',
+              payer: actualPayerAddress, // Admin wallet or buyer's wallet (fallback)
+              paymentFlow: actualPayerAddress === wallet ? 'buyer' : 'admin',
               success: true,
               transferResponse: txn2
             }
